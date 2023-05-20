@@ -1,39 +1,21 @@
-import Sidebar from './components/Sidebar';
-import Route from './components/Route';
-import AccordionPage from './pages/AccordionPage';
-import DropdownPage from './pages/DropdownPage';
-import ButtonPage from './pages/ButtonPage';
-import ModalPage from './pages/ModalPage';
-import TablePage from "./pages/TablePage";
-import CounterPage from "./pages/CounterPage";
+import React from 'react'
+import {CarForm} from "./component/CarForm"
+import {CarList} from "./component//CarList"
+import {CarSearch} from "./component/CarSearch"
+import {CarValue} from "./component/CarValue"
+
 
 function App() {
-  return (
-    <div className="container mx-auto grid grid-cols-6 gap-4 mt-4">
-      <Sidebar />
-      <div className="col-span-5">
-        <Route path="/accordion">
-          <AccordionPage />
-        </Route>
-        <Route path="/">
-          <DropdownPage />
-        </Route>
-        <Route path="/buttons">
-          <ButtonPage />
-        </Route>
-        <Route path="/modal">
-          <ModalPage />
-        </Route>
-        <Route path="/table">
-          <TablePage />
-        </Route>  
-        <Route path="/counterpage">
-          <CounterPage  initialCount={10}/>
-        </Route>
 
-      </div>
+
+  return (
+    <div className = "flex-col space-y-10">
+       <CarForm/>
+       <CarSearch/>
+       <CarList/>
+       <CarValue/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

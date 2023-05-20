@@ -1,14 +1,19 @@
-import './index.css';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { NavigationProvider } from './context/navigation';
+import React from "react"
+import ReactDom from "react-dom/client"
+import {Provider} from "react-redux"
+import {store} from "./store"
 
-const el = document.getElementById('root');
-const root = ReactDOM.createRoot(el);
+import "./index.css"
+
+
+import App from "./App";
+
+
+const El = document.getElementById("root");
+const root =  ReactDom.createRoot(El)
 
 root.render(
-  <NavigationProvider>
-    <App />
-  </NavigationProvider>
-);
+            <Provider store={store}>
+                <App/>
+            </Provider>
+)
